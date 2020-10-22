@@ -1,0 +1,49 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+<h2 class="display-4">
+    Create a new account.
+    <i class="fas fa-user" style="color:whitesmoke"></i>
+</h2>
+<hr />
+<form method="post" asp-action="Register">
+    <div class="row form-group">
+        <label asp-for="Email" class="col-form-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="Email" class="form-control" placeholder="Email..." />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="row form-group">
+        <label asp-for="Password" class="col-form-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="Password" class="form-control" placeholder="Password..." />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="row form-group">
+        <label asp-for="ConfirmPassword" class="col-form-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password..." />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="row form-group">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-outline-success">Register</button>
+            <a asp-page="/Index" class="btn btn-outline-secondary">Cancel</a>
+
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

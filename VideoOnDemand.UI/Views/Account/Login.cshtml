@@ -1,0 +1,45 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Log in";
+}
+
+
+<h2 class="display-4">
+    Log in
+    <i class="fas fa-user" style="color:whitesmoke"></i>
+</h2>
+<hr />
+<form method="post">
+    <div class="row form-group">
+        <label asp-for="Email" class="col-form-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="Email" placeholder="Email..." class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label asp-for="Password" class="col-form-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="Password" placeholder="Password..." class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="checkbox">
+            <label asp-for="RememberMe" class="ml-3">
+                <input asp-for="RememberMe">
+                @Html.DisplayNameFor(x => x.RememberMe)
+            </label>
+
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-10 mb-2">
+            <button type="submit" class="btn btn-outline-success">Log in</button>
+            <a asp-page="/Index" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
